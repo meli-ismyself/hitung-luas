@@ -37,11 +37,11 @@ public class MainActivity extends ActionBarActivity {
 
                     Toast.makeText(getApplicationContext(), "Nilai panjang dan lebar belum diisi", Toast.LENGTH_SHORT).show();
 
-                }if(panjang.matches("")){
+                }else if(panjang.matches("")){
 
                     Toast.makeText(getApplicationContext(),"Nilai panjang belum diisi", Toast.LENGTH_SHORT).show();
 
-                }if(lebar.matches("")){
+                }else if(lebar.matches("")){
 
                     Toast.makeText(getApplicationContext(),"Nilai lebar belum diisi", Toast.LENGTH_SHORT).show();
 
