@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -32,13 +33,26 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 String panjang = edtPanjang.getText().toString().trim();
                 String lebar = edtLebar.getText().toString().trim();
+                if(panjang.matches("")&& lebar.matches("")){
 
-                double p = Double.parseDouble(panjang);
-                double l = Double.parseDouble(lebar);
+                    Toast.makeText(getApplicationContext(), "Nilai panjang dan lebar belum diisi", Toast.LENGTH_SHORT).show();
 
-                double luas = p * l;
+                }if(panjang.matches("")){
 
-                txtLuas.setText("Luas : "+luas);
+                    Toast.makeText(getApplicationContext(),"Nilai panjang belum diisi", Toast.LENGTH_SHORT).show();
+
+                }if(lebar.matches("")){
+
+                    Toast.makeText(getApplicationContext(),"Nilai lebar belum diisi", Toast.LENGTH_SHORT).show();
+
+                }else{
+                    double p = Double.parseDouble(panjang);
+                    double l = Double.parseDouble(lebar);
+
+                    double luas = p * l;
+
+                    txtLuas.setText("Luas : " + luas);
+                }
             }
         });
     }
